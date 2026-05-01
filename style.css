@@ -5,3 +5,64 @@
 .storage-note{margin:10px 0 12px;padding:11px 12px;border-radius:15px;background:rgba(6,182,212,.10);border:1px solid rgba(6,182,212,.22);color:#a5f3fc;font-size:13px;line-height:1.45}
 .edit-grid{grid-template-columns:1fr 76px 110px 78px 65px 65px}
 @media(max-width:720px){.edit-grid{grid-template-columns:1fr 1fr}.edit-grid input:first-child{grid-column:1/-1}}
+
+.tier-table{
+  margin-bottom:18px;
+  padding:18px;
+  border-radius:22px;
+  background:rgba(17,24,39,.78);
+  border:1px solid rgba(255,255,255,.09);
+  backdrop-filter:blur(18px);
+  box-shadow:var(--shadow);
+}
+
+.tier-table h3{
+  margin:0 0 12px;
+  font-size:16px;
+  color:#c7d2fe;
+}
+
+.tier-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
+}
+
+.tier-item{
+  padding:10px 12px;
+  border-radius:14px;
+  font-size:13px;
+  display:flex;
+  justify-content:space-between;
+  background:rgba(30,41,59,.75);
+  border:1px solid rgba(255,255,255,.06);
+  transition:.15s;
+}
+
+.tier-item:hover{
+  transform:translateY(-2px);
+  background:rgba(55,65,81,.85);
+}
+
+.tier-item span{
+  color:#9ca3af;
+}
+
+/* 티어 컬러 (기존 UI에 맞춤) */
+.iron{border-left:4px solid #6b7280}
+.bronze{border-left:4px solid #b45309}
+.silver{border-left:4px solid #9ca3af}
+.gold{border-left:4px solid #facc15}
+.platinum{border-left:4px solid #2dd4bf}
+.emerald{border-left:4px solid #10b981}
+.diamond{border-left:4px solid #60a5fa}
+.master{border-left:4px solid #a855f7}
+.grandmaster{border-left:4px solid #ef4444}
+.challenger{border-left:4px solid #f97316}
+
+/* 모바일 대응 */
+@media(max-width:900px){
+  .tier-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
