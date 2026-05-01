@@ -7,79 +7,71 @@
 @media(max-width:720px){.edit-grid{grid-template-columns:1fr 1fr}.edit-grid input:first-child{grid-column:1/-1}}
 
 .eyebrow.small{
-  margin:0 0 4px;
-  font-size:10px;
-  letter-spacing:.18em;
+  display:none;
 }
 
 .tier-guide{
-  margin-bottom:18px;
-  padding:16px;
-  border-radius:22px;
-  background:linear-gradient(135deg,rgba(15,23,42,.88),rgba(30,41,59,.62));
-  border:1px solid var(--line);
-  box-shadow:var(--shadow);
-  backdrop-filter:blur(18px);
+  margin:-4px 0 18px;
+  padding:10px 12px;
+  border-radius:18px;
+  background:rgba(15,23,42,.42);
+  border:1px solid rgba(255,255,255,.07);
+  backdrop-filter:blur(14px);
 }
 
 .tier-guide-head{
   display:flex;
+  align-items:center;
   justify-content:space-between;
-  align-items:flex-end;
-  gap:12px;
-  margin-bottom:12px;
+  margin-bottom:8px;
 }
 
 .tier-guide-head h3{
   margin:0;
-  font-size:18px;
+  font-size:13px;
+  color:#cbd5e1;
+  font-weight:800;
 }
 
 .tier-guide-head span{
-  font-size:12px;
-  color:#a5f3fc;
-  padding:6px 10px;
+  font-size:11px;
+  color:#93c5fd;
+  padding:4px 8px;
   border-radius:999px;
-  background:rgba(6,182,212,.12);
-  border:1px solid rgba(6,182,212,.22);
+  background:rgba(59,130,246,.10);
+  border:1px solid rgba(59,130,246,.18);
 }
 
 .tier-chips{
-  display:grid;
-  grid-template-columns:repeat(10,1fr);
-  gap:8px;
+  display:flex;
+  gap:6px;
+  overflow-x:auto;
+  padding-bottom:2px;
 }
 
 .tier-chip{
-  min-height:66px;
-  padding:10px;
-  border-radius:16px;
-  background:rgba(2,6,23,.42);
-  border:1px solid rgba(255,255,255,.08);
+  flex:0 0 auto;
+  min-width:112px;
+  padding:7px 9px 7px 10px;
+  border-radius:12px;
+  background:rgba(2,6,23,.38);
+  border:1px solid rgba(255,255,255,.06);
+  border-left:3px solid var(--tier-color);
   display:flex;
-  flex-direction:column;
+  align-items:center;
   justify-content:space-between;
-  position:relative;
-  overflow:hidden;
-}
-
-.tier-chip::before{
-  content:"";
-  position:absolute;
-  inset:0 auto 0 0;
-  width:4px;
-  background:var(--tier-color);
+  gap:8px;
 }
 
 .tier-chip b{
-  font-size:13px;
-  padding-left:4px;
+  font-size:12px;
+  color:#e5e7eb;
 }
 
 .tier-chip span{
-  font-size:12px;
-  color:#9ca3af;
-  padding-left:4px;
+  font-size:11px;
+  color:#94a3b8;
+  white-space:nowrap;
 }
 
 .iron{--tier-color:#6b7280}
@@ -93,14 +85,17 @@
 .grandmaster{--tier-color:#ef4444}
 .challenger{--tier-color:#f97316}
 
-@media(max-width:1180px){
-  .tier-chips{
-    grid-template-columns:repeat(5,1fr);
-  }
-}
-
 @media(max-width:720px){
-  .tier-chips{
-    grid-template-columns:repeat(2,1fr);
+  .tier-guide{
+    padding:10px;
+  }
+
+  .tier-guide-head{
+    align-items:flex-start;
+    gap:8px;
+  }
+
+  .tier-chip{
+    min-width:118px;
   }
 }
