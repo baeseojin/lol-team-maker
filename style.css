@@ -6,63 +6,101 @@
 .edit-grid{grid-template-columns:1fr 76px 110px 78px 65px 65px}
 @media(max-width:720px){.edit-grid{grid-template-columns:1fr 1fr}.edit-grid input:first-child{grid-column:1/-1}}
 
-.tier-table{
+.eyebrow.small{
+  margin:0 0 4px;
+  font-size:10px;
+  letter-spacing:.18em;
+}
+
+.tier-guide{
   margin-bottom:18px;
-  padding:18px;
+  padding:16px;
   border-radius:22px;
-  background:rgba(17,24,39,.78);
-  border:1px solid rgba(255,255,255,.09);
-  backdrop-filter:blur(18px);
+  background:linear-gradient(135deg,rgba(15,23,42,.88),rgba(30,41,59,.62));
+  border:1px solid var(--line);
   box-shadow:var(--shadow);
+  backdrop-filter:blur(18px);
 }
 
-.tier-table h3{
-  margin:0 0 12px;
-  font-size:16px;
-  color:#c7d2fe;
-}
-
-.tier-grid{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:10px;
-}
-
-.tier-item{
-  padding:10px 12px;
-  border-radius:14px;
-  font-size:13px;
+.tier-guide-head{
   display:flex;
   justify-content:space-between;
-  background:rgba(30,41,59,.75);
-  border:1px solid rgba(255,255,255,.06);
-  transition:.15s;
+  align-items:flex-end;
+  gap:12px;
+  margin-bottom:12px;
 }
 
-.tier-item:hover{
-  transform:translateY(-2px);
-  background:rgba(55,65,81,.85);
+.tier-guide-head h3{
+  margin:0;
+  font-size:18px;
 }
 
-.tier-item span{
+.tier-guide-head span{
+  font-size:12px;
+  color:#a5f3fc;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(6,182,212,.12);
+  border:1px solid rgba(6,182,212,.22);
+}
+
+.tier-chips{
+  display:grid;
+  grid-template-columns:repeat(10,1fr);
+  gap:8px;
+}
+
+.tier-chip{
+  min-height:66px;
+  padding:10px;
+  border-radius:16px;
+  background:rgba(2,6,23,.42);
+  border:1px solid rgba(255,255,255,.08);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+}
+
+.tier-chip::before{
+  content:"";
+  position:absolute;
+  inset:0 auto 0 0;
+  width:4px;
+  background:var(--tier-color);
+}
+
+.tier-chip b{
+  font-size:13px;
+  padding-left:4px;
+}
+
+.tier-chip span{
+  font-size:12px;
   color:#9ca3af;
+  padding-left:4px;
 }
 
-/* 티어 컬러 (기존 UI에 맞춤) */
-.iron{border-left:4px solid #6b7280}
-.bronze{border-left:4px solid #b45309}
-.silver{border-left:4px solid #9ca3af}
-.gold{border-left:4px solid #facc15}
-.platinum{border-left:4px solid #2dd4bf}
-.emerald{border-left:4px solid #10b981}
-.diamond{border-left:4px solid #60a5fa}
-.master{border-left:4px solid #a855f7}
-.grandmaster{border-left:4px solid #ef4444}
-.challenger{border-left:4px solid #f97316}
+.iron{--tier-color:#6b7280}
+.bronze{--tier-color:#b45309}
+.silver{--tier-color:#9ca3af}
+.gold{--tier-color:#facc15}
+.platinum{--tier-color:#2dd4bf}
+.emerald{--tier-color:#10b981}
+.diamond{--tier-color:#60a5fa}
+.master{--tier-color:#a855f7}
+.grandmaster{--tier-color:#ef4444}
+.challenger{--tier-color:#f97316}
 
-/* 모바일 대응 */
-@media(max-width:900px){
-  .tier-grid{
+@media(max-width:1180px){
+  .tier-chips{
+    grid-template-columns:repeat(5,1fr);
+  }
+}
+
+@media(max-width:720px){
+  .tier-chips{
     grid-template-columns:repeat(2,1fr);
   }
 }
